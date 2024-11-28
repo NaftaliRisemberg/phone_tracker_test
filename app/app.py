@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from blueprints.get_phone_dp import get_phone_bp
 from blueprints.phone_bp import phone_bp
 from init_db import init_neo4j
 
@@ -10,6 +11,7 @@ app.config['DEBUG'] = True
 app.config['LOGGING_LEVEL'] = logging.DEBUG
 
 app.register_blueprint(phone_bp, url_prefix='/api')
+app.register_blueprint(get_phone_bp, url_prefix='/api')
 
 with app.app_context():
     app.neo4j_driver = init_neo4j()
