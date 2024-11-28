@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+  app-service:
+    build:
+        context: "app"
+        dockerfile: Dockerfile
+    container_name: app-service
+    ports:
+      - "5000:5000"
