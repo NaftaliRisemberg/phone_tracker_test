@@ -1,6 +1,4 @@
 from flask import Blueprint, request, jsonify, current_app
-import json
-import logging
 
 phone_bp = Blueprint('phone_bp', __name__)
 
