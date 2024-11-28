@@ -20,3 +20,7 @@ services:
     container_name: app-service
     ports:
       - "5000:5000"
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
