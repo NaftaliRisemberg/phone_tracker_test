@@ -9,9 +9,3 @@ services:
     container_name: app-service
     ports:
       - "5000:5000"
-
-  blueprints-service:
-    build:
-        context: "blueprints"
-        dockerfile: Dockerfile
-    container_name: blueprints-service
