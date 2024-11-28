@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
+from blueprints.phone_bp import phone_bp
 from init_db import init_neo4j
-from blueprints import phone_bp
+
 import logging
 
 app = Flask(__name__)
