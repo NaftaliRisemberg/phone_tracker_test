@@ -15,11 +15,12 @@ services:
 
   app-service:
     build:
-        context: "app"
-        dockerfile: Dockerfile
-    container_name: app-service
+      context: "."
+      dockerfile: "C:/Users/טודוליסט/PycharmProjects/phone_tracker_test/Dockerfile"
+    container_name: application-service
     ports:
       - "5000:5000"
+
 
 volumes:
   neo4j_data:
