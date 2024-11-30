@@ -1,6 +1,7 @@
-from flask import request, jsonify, current_app, Blueprint
+from flask import jsonify, current_app, Blueprint
 import logging
-from .gey_phone_service import GetPhoneRepository
+
+from services.phone_retrieval_service import GetPhoneRepository
 
 get_phone_bp = Blueprint('get_phone_bp', __name__)
 

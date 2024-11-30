@@ -1,5 +1,5 @@
 from flask import request, jsonify, current_app, Blueprint
-from .phone_service import PhoneRepository
+from services.data_insertion_service import PhoneRepository
 import logging
 
 phone_bp = Blueprint('phone_bp', __name__)
