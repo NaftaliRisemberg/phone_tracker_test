@@ -8,7 +8,7 @@ class GetPhoneRepository:
             query = """
                 MATCH (sender:Device)-[i:INTERACTION]->(receiver:Device)
                 WHERE i.method = 'Bluetooth'
-                RETURN sender.id AS sender_id, receiver.id AS receiver_id, i.duration_seconds AS duration_seconds
+                RETURN sender.sender_id AS sender_id, receiver.receiver_id AS receiver_id, i.duration_seconds AS duration_seconds
             """
             result = session.run(query)
             connections = []
