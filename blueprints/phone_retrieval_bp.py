@@ -34,13 +34,13 @@ def find_stronger_interaction():
 @get_phone_bp.route('/find_count_by_sender_id', methods=['GET'])
 def find_count_by_sender_id():
    try:
-      sender_id = request.args.get('id')
+      sender_id = request.args.get('sender_id')
 
       if sender_id is None:
          return jsonify({'error': 'Missing sender_id parameter'}), 400
 
       repo = GetPhoneRepository(current_app.neo4j_driver)
-      data = repo.find_count_by_sender_id()
+      data = repo.find_count_by_sender_id(sender_id)
 
       return jsonify(data), 200
 
