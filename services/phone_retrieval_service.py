@@ -20,3 +20,20 @@ class GetPhoneRepository:
                 })
 
             return connections
+
+    def find_stronger_interaction(self):
+        with self.driver.session() as session:
+            query = """
+                    MATCH (s:Device)-[i:INTERACTION]->(r:Device) 
+                    WHERE i.signal_strength_dbm > -60 
+                    RETURN s.sender_id, r.receiver_id
+            """
+            result = session.run(query)
+            connections = []
+            for record in result:
+                connections.append({
+                    'sender_id': record['sender_id'],
+                    'receiver_id': record['receiver_id'],
+                })
+
+            return connections
