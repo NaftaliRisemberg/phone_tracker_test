@@ -14,8 +14,8 @@ def find_bluetooth_connections():
       return jsonify(data), 200
 
    except Exception as e:
-      print(f'Error in POST /api/phone_tracker: {str(e)}')
-      logging.error(f'Error in POST /api/phone_tracker: {str(e)}')
+      print(f'Error in GET /api/phone_tracker: {str(e)}')
+      logging.error(f'Error in GET /find_bluetooth_connections: {str(e)}')
       return jsonify({'error': 'internal server error'}), 500
 
 @get_phone_bp.route('/find_stronger_than_-60', methods=['GET'])
@@ -27,6 +27,6 @@ def find_stronger_interaction():
       return jsonify(data), 200
 
    except Exception as e:
-      print(f'Error in POST /api/phone_tracker: {str(e)}')
-      logging.error(f'Error in POST /api/phone_tracker: {str(e)}')
+      print(f'Error in GET /api/find_stronger_than_-60: {str(e)}')
+      logging.error(f'Error in GET /api/find_stronger_than_-60: {str(e)}')
       return jsonify({'error': 'internal server error'}), 500
