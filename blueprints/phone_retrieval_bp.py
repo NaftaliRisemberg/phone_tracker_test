@@ -45,6 +45,6 @@ def find_count_by_sender_id():
       return jsonify(data), 200
 
    except Exception as e:
-      print(f'Error in GET /api/find_stronger_than_-60: {str(e)}')
-      logging.error(f'Error in GET /api/find_stronger_than_-60: {str(e)}')
+      print(f'Error in GET /api/find_count_by_sender_id: {str(e)}')
+      logging.error(f'Error in GET /find_count_by_sender_id: {str(e)}')
       return jsonify({'error': 'internal server error'}), 500
