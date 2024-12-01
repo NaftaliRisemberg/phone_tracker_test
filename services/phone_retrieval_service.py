@@ -37,3 +37,15 @@ class GetPhoneRepository:
                 })
 
             return connections
+
+    def find_count_by_sender_id(self, sender_id):
+        with self.driver.session() as session:
+            query = """
+                    MATCH (s:Device)-[i:INTERACTION]->(r:Device) 
+                    WHERE s.sender_id = $sender_id
+                    RETURN COUNT(i)
+            """
+            result = session.run(query, sender_id)
+            connections_cunt = result
+
+            return connections_cunt
